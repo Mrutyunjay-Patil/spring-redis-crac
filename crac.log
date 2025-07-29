@@ -1,0 +1,90 @@
+mj@DESKTOP-8E4U504:/mnt/d/EQ/crac/spring-redis-crac$ mvn clean package -DskipTests
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -------------------< com.example:spring-redis-crac >--------------------
+[INFO] Building spring-redis-crac 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.4.1:clean (default-clean) @ spring-redis-crac ---
+[INFO] Deleting /mnt/d/EQ/crac/spring-redis-crac/target
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ spring-redis-crac ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- compiler:3.13.0:compile (default-compile) @ spring-redis-crac ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 12 source files with javac [debug parameters release 17] to target/classes
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ spring-redis-crac ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO]
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ spring-redis-crac ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 4 source files with javac [debug parameters release 17] to target/test-classes
+[WARNING] /mnt/d/EQ/crac/spring-redis-crac/src/test/java/com/example/springrediscrac/controller/CacheControllerTest.java:[26,6] org.springframework.boot.test.mock.mockito.MockBean in org.springframework.boot.test.mock.mockito has been deprecated and marked for removal
+[INFO]
+[INFO] --- surefire:3.5.3:test (default-test) @ spring-redis-crac ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- jar:3.4.2:jar (default-jar) @ spring-redis-crac ---
+[INFO] Building jar: /mnt/d/EQ/crac/spring-redis-crac/target/spring-redis-crac-0.0.1-SNAPSHOT.jar
+[INFO]
+[INFO] --- spring-boot:3.4.6:repackage (repackage) @ spring-redis-crac ---
+[INFO] Replacing main artifact /mnt/d/EQ/crac/spring-redis-crac/target/spring-redis-crac-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /mnt/d/EQ/crac/spring-redis-crac/target/spring-redis-crac-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.679 s
+[INFO] Finished at: 2025-07-29T05:11:15Z
+[INFO] ------------------------------------------------------------------------
+mj@DESKTOP-8E4U504:/mnt/d/EQ/crac/spring-redis-crac$ java -XX:CRaCCheckpointTo=cr -jar ./target/spring-redis-crac-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.6)
+
+2025-07-29 05:11:23.903 [main] INFO  c.e.s.SpringRedisCracApplication - Starting SpringRedisCracApplication v0.0.1-SNAPSHOT using Java 17.0.16 with PID 11406 (/mnt/d/EQ/crac/spring-redis-crac/target/spring-redis-crac-0.0.1-SNAPSHOT.jar started by mj in /mnt/d/EQ/crac/spring-redis-crac)
+2025-07-29 05:11:23.909 [main] DEBUG c.e.s.SpringRedisCracApplication - Running with Spring Boot v3.4.6, Spring v6.2.7
+2025-07-29 05:11:23.910 [main] INFO  c.e.s.SpringRedisCracApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-29 05:11:27.206 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-29 05:11:27.216 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-29 05:11:28.045 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.
+2025-07-29 05:11:31.003 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-29 05:11:31.039 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-29 05:11:31.040 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-29 05:11:31.136 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-29 05:11:31.138 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7057 ms
+2025-07-29 05:11:32.801 [main] INFO  c.e.s.crac.RedisCracResource - RedisCracResource initialized - Using Lettuce Redis client with Spring Boot CRaC support
+2025-07-29 05:11:32.802 [main] INFO  c.e.s.crac.RedisCracResource - Cache manager: RedisCacheManager
+2025-07-29 05:11:32.809 [main] INFO  c.e.s.crac.RedisCracResource - Connection factory: LettuceConnectionFactory
+2025-07-29 05:11:33.321 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-07-29 05:11:34.671 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-29 05:11:34.705 [main] INFO  c.e.s.SpringRedisCracApplication - Started SpringRedisCracApplication in 12.366 seconds (process running for 11.47)
+2025-07-29 05:12:09.176 [http-nio-8080-exec-1] INFO  o.a.tomcat.util.http.parser.Cookie - A cookie header was received [sidebar:state=true] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-07-29 05:12:09.196 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-29 05:12:09.197 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-29 05:12:09.202 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-07-29 05:12:09.422 [http-nio-8080-exec-1] INFO  c.e.s.service.CatalogService - Updating cache for id: item123 with data: "string"
+============================ Meanwhile in another terminal ================================
+mj@DESKTOP-8E4U504:/mnt/d/EQ/crac/spring-redis-crac$ jcmd spring-redis-crac JDK.checkpoint
+11406:
+CR: Checkpoint ...
+===========================================================================================
+2025-07-29 05:12:26.335 [Attach Listener] INFO  jdk.crac - Starting checkpoint
+2025-07-29 05:12:26.347 [Attach Listener] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-29 05:12:26.357 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+Killed
+mj@DESKTOP-8E4U504:/mnt/d/EQ/crac/spring-redis-crac$ java -XX:CRaCRestoreFrom=cr
+2025-07-29 05:12:44.714 [Attach Listener] INFO  o.s.c.s.DefaultLifecycleProcessor - Restarting Spring-managed lifecycle beans after JVM restore
+2025-07-29 05:12:44.804 [Attach Listener] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-29 05:12:44.823 [Attach Listener] INFO  o.s.c.s.DefaultLifecycleProcessor - Spring-managed lifecycle restart completed (restored JVM running for 1024 ms)
+2025-07-29 05:13:31.032 [http-nio-8080-exec-2] INFO  c.e.s.service.CatalogService - Updating cache for id: item123 with data: "string1"
